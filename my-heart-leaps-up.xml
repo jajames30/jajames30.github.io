@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>MY HEART LEAPS UP WHEN I BEHOLD</title>
+            <author>William Wordsworth</author>
+            <respStmt>
+               <resp>TEI encoded by</resp>
+               <name xml:id="JJ">Jennifer James</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>TEI practice project</publisher>
+            <pubPlace>Indianapolis, Indiana</pubPlace>
+            <date when="2015">2015</date>
+         </publicationStmt>
+         <sourceDesc>
+            <listBibl>
+               <head>Works consulted</head>
+               <!-- Caitlin: I wanted to try both the unstructured bibl and the structured biblStruct.  
+                  Which one works better, or do they each work well for the kind of metadata they contain?
+                  -->
+               <bibl>
+                  <!-- Project Gutenberg file # pg12145  -->
+                  <!-- Name of poem --> 
+                  MY HEART LEAPS UP WHEN I BEHOLD 
+                  <!-- bibl info about the book contained in the PG file: --> 
+                  The Poetical Works of William Wordsworth, Vol. II. 
+                  William Wordsworth Edited by William Knight 1896
+                  <!-- about the specific poem: --> 
+                  Composed March 26, 1802.--Published 1807.
+                  [Written at Town-end, Grasmere.--I.F.]
+                  <!-- PG staff responsible for digitizing: --> 
+                  Produced by Jonathon Ingram, Clytie Siddall 
+                  and the Online Distributed Proofreading Team! 
+                  <!-- Project Gutenberg license: at head of file -->
+                  This eBook is for the use of anyone anywhere at no cost and with
+                  almost no restrictions whatsoever.  You may copy it, give it away or
+                  re-use it under the terms of the Project Gutenberg License included
+                  with this eBook or online at www.gutenberg.net
+                  </bibl>
+               <biblStruct>
+                  <analytic>
+                     <title>My Heart Leaps Up</title>
+                     <author>William Wordsworth</author>
+                  </analytic>
+                  <monogr>
+                     <title>IMMORTAL POEMS of the ENGLISH LANGUAGE : British and American Poetry
+                        from Chaucer's Time to the Present Day</title>
+                     <author>EDITED BY OSCAR WILLIAMS</author>
+                     <imprint>
+                        <publisher> WASHINGTON SQUARE PRESS, INC. </publisher>
+                        <date when="1952">Copyright, 1952</date>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+            </listBibl>
+            <!-- Caitlin: Is this the best way to code the text that goes inside the tags? -->
+            <listWit>
+               <witness xml:id="pg">MY HEART LEAPS UP WHEN I BEHOLD (Project Gutenberg)</witness>
+               <witness xml:id="ow">My Heart Leaps Up (Oscar Williams edition)</witness>
+            </listWit>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <creation>
+            <name type="author">William Wordsworth</name>
+            <date when="1802-03-26">March 26, 1802</date>
+            <placeName>Town-end, Grasmere</placeName>
+         </creation>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2015-01-21T16:06:00-05:00" who="#JJ">v.1 Created minimal TEI doc.</change>
+         <change when="2015-01-21T16:13:00-05:00" who="#JJ">v.2 Added lg and l codes</change>
+         <change when="2015-01-21T16:43:00-05:00" who="#JJ">v.3 Expanded sourceDesc</change>
+         <change when="2015-01-22T14:22:00-05:00" who="#JJ">v.4 Added rhyme and indent info</change>
+         <change when="2015-01-22T14:27:00-05:00" who="#JJ">v.5 Added enjamb tags</change>
+         <change when="2015-01-22T14:27:00-05:00" who="#JJ">v.6 Fixed minor typo in imprint
+            date</change>
+         <change when="2015-01-22T14:40:00-05:00" who="#JJ">v.7 Added critical apparatus tagging for
+            poem title</change>
+         <change when="2015-01-22T14:42:00-05:00" who="#JJ">v.8 Minor fix to
+            publicationStmt</change>
+         <change when="2015-01-22T14:49:00-05:00" who="#JJ">v.9 Added analytic tag to biblStruct and
+            added poem title to bibl element</change>
+         <change when="2015-01-22T14:58:00-05:00" who="#JJ">v.10 Added profileDesc and nested
+            creation date</change>
+         <change when="2015-02-23T14:53:00-05:00" who="#JJ">v.11 Final version.  Minor edits and added more comments/quesitons.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <lg type="poem" rhyme="abccabcdd">
+            <head>
+               <!-- Project Gutenberg version has poem title as "MY HEART LEAPS UP WHEN I BEHOLD"
+                 and "Immortal poems" has "My Heart Leaps Up" -->
+               <app>
+                  <rdg wit="#pg">MY HEART LEAPS UP WHEN I BEHOLD </rdg>
+                  <rdg wit="#ow">My Heart Leaps Up</rdg>
+               </app>
+            </head>
+            <!-- I'm not positive I understand enjambement but I tagged the lines that
+                 don't end in punctuation. -->
+            <!-- I don't think there are any caesurae in this poem -->
+            <!-- I thought about grouping the lines into smaller lines based on the indents, but 
+                 there were no line breaks, and the poem all seems to be one unit.-->
+            <l enjamb="yes">My heart leaps up when I <rhyme label="a">behold</rhyme></l>
+            <l rend="indent">A rainbow in the <rhyme label="b">sky</rhyme>:</l>
+            <l>So was it when my life <rhyme label="c">began</rhyme>;</l>
+            <l>So is it now I am a <rhyme label="c">man</rhyme>;</l>
+            <l>So be it when I shall grow <rhyme label="a">old</rhyme>,</l>
+            <l rend="indent">Or let me <rhyme label="b">die!</rhyme></l>
+            <l>The Child is father of the <rhyme label="c">Man</rhyme>;</l>
+            <l enjamb="yes">And I could wish my days to <rhyme label="d">be</rhyme></l>
+            <l>Bound each to each by natural <rhyme label="d">piety</rhyme></l>
+         </lg>
+      </body>
+   </text>
+</TEI>
